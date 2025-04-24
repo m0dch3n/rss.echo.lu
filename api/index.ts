@@ -5,7 +5,7 @@ export const config = {
   runtime: 'edge'
 }
 
-const app = new Hono().basePath('/')
+const app = new Hono().basePath('/api')
 
 interface Event {
   id: string;

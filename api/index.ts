@@ -5,7 +5,7 @@ export const config = {
   runtime: 'edge'
 }
 
-const app = new Hono().basePath('/api')
+const app = new Hono().basePath('/')
 
 interface Event {
   id: string;
@@ -194,7 +194,7 @@ app.get('/json', async (c) => {
 });
 
 // RSS endpoint
-app.get('/rss', async (c) => {
+app.get('/', async (c) => {
   try {
     const data = await fetchEchoData(new URLSearchParams(c.req.query()));
     const rss = convertToRSS(data, c.req.url);
